@@ -1,0 +1,26 @@
+{
+    "name": "check_your_reflex_api",
+    "version": "1.0.0",
+    "description": "API gry",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon server.js"
+    },
+    "keywords": [
+        "API",
+        "rest"
+    ],
+    "author": "Paweł Piwkowski & Maciej Nowacki",
+    "license": "#",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "mongoose": "^5.7.11",
+        "morgan": "^1.9.1",
+        "multer": "^1.4.2"
+    },
+    "devDependencies": {
+        "nodemon": "^1.19.4"
+    }
+}
