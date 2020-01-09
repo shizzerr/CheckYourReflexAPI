@@ -15,7 +15,7 @@ app.use("/players", playersRoutes);
 
 // obsługa błędów
 app.use((req, res, next) => {
-    const error = new Error("Nie znaleziono");
+    const error = new Error("Error 404");
     error.status = 404;
     next(error);
 });
