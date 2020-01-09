@@ -7,4 +7,4 @@ const playerstatsSchema = mongoose.Schema({
     result: String
 });
 
-module.exports = mongoose.model("PlayerStat", playerstatsSchema);
+module.exports = mongoose.model("playerStat", playerstatsSchema);

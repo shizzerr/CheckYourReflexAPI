@@ -20,7 +20,7 @@ router.post("/", (req, res, next) => {
         tries: req.body.tries,
         result: req.file.result
     });
-    playerStat.save()
+    playerstats.save()
         .then(result => {
             res.status(200).json({
                 message: "Dodanie statystyk nowego gracza",
