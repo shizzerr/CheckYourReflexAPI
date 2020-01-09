@@ -14,7 +14,6 @@ router.get("/", (req, res, next) => {
 
 });
 router.post("/", (req, res, next) => {
-    console.log(req.file);
     const playerstats = new playerStat({
         _id: new mongoose.Types.ObjectId(),
         nickname: req.body.nickname,
@@ -25,7 +24,7 @@ router.post("/", (req, res, next) => {
         .then(result => {
             res.status(200).json({
                 message: "Dodanie statystyk nowego gracza",
-                createdPlayer: playerStat
+                createdplayerStat: playerstats
             });
         })
         .catch(err => req.status(500).json({ error: err }));
