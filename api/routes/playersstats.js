@@ -2,7 +2,7 @@ const express = require("express"); //import pakietu express
 const router = express.Router();
 const mongoose = require("mongoose");
 
-const Pstats = require("../models/playerstats");
+const playerStat = require("../models/playerstats");
 
 
 router.get("/", (req, res, next) => {
