@@ -1,0 +1,6 @@
+{
+    "env": {
+        "M_PASS": "check123",
+        "M_LOG": "check123"
+    }
+}
