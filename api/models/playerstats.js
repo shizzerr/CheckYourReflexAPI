@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const playerstatsSchema = mongoose.Schema({
     _id: mongoose.Types.ObjectId,
     nickname: String,
-    tries: Number,
+    tries: String,
     result: String
 });
 
