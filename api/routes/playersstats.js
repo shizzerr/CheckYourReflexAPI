@@ -8,7 +8,7 @@ router.get("/", (req, res, next) => {
 })
 router.post("/", (req, res, next) => {
     const playerstats = new playerStat({
-        _id: new mongoose.Types.PlayerId(),
+        _id: new mongoose.Types.ObjectId(),
         nickname: req.body.nickname,
         tries: req.body.tries,
         result: req.body.result
