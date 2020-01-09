@@ -1,7 +1,7 @@
 const express = require("express"); //import pakietu express
 const router = express.Router();
 const mongoose = require("mongoose");
-const multer = require("multer");
+
 const Pstats = require("../models/playerstats");
 
 
@@ -13,6 +13,23 @@ router.get("/", (req, res, next) => {
         .catch(err => req.status(500).json({ error: err }));
 
 });
+router.post("/", (req, res, next) => {
+    console.log(req.file);
+    const playerstats = new playerStat({
+        _id: new mongoose.Types.ObjectId(),
+        nickname: req.body.nickname,
+        tries: req.body.tries,
+        result: req.file.result
+    });
+    playerStat.save()
+        .then(result => {
+            res.status(200).json({
+                message: "Dodanie statystyk nowego gracza",
+                createdPlayer: playerStat
+            });
+        })
+        .catch(err => req.status(500).json({ error: err }));
+});
 router.get("/:pstatsId", (req, res, next) => {
     const id = req.params.pstatsId;
     Pstats.findById(id).exec().then(doc => {
@@ -21,11 +38,11 @@ router.get("/:pstatsId", (req, res, next) => {
 
 })
 
-router.delete("/:productId", (req, res, next) => {
-    const id = req.params.productId;
+router.delete("/:pstatsId", (req, res, next) => {
+    const id = req.params.pstatsId;
     Product.remove({ _id: id }).exec()
         .then(result => res.status(200).json({
-            message: "Usunięcie produktu o nr " + id
+            message: "Usunięcie statystyk gracza o nr " + id
         }))
         .catch(err => req.status(500).json({ error: err }));
 })
