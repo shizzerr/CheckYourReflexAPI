@@ -4,5 +4,7 @@ const playerstatsSchema = mongoose.Schema({
     nickname: String,
     tries: String,
     result: String
+}, {
+    versionKey: false
 })
 module.exports = mongoose.model("playerStat", playerstatsSchema)
